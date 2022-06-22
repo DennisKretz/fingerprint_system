@@ -1,7 +1,0 @@
-- add a config, where you can set the drop ent. or false for the original weapon
-- add config where you can set a list. what weapons should get fingerprintified [DONE]
-- todo add functions in seperate modules
-- need to add check on clientside if fingerprint sweep holding
-
-[ANTI_EXPLOIT_LOGIC]
-- if sent entity in netmsg has not the same pos as the ent with the name then ban the player [DONE]
