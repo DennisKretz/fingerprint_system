@@ -2,7 +2,6 @@ require("CONF_TABLES")
 require("ANTI_TAMPERING")
 
 local FAKE_PLAYER = "eE088192"
-calledNetMsg1 = false
 
 local function checkRootSwep(ply) 
     local plyWeapon = ply:GetActiveWeapon()
@@ -35,7 +34,6 @@ end
 util.AddNetworkString("check_weapons_table")
 util.AddNetworkString("check_root_swep_table")
 local checkRootSwepTableMsg = function()
-    calledNetMsg1 = true
     local ply = net.ReadEntity()
 
     local isFakePlayer = ANTI_TAMPERING.checkPlayerPosition(ply)
