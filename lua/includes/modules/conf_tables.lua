@@ -2,7 +2,7 @@ module("CONF_TABLES", package.seeall)
 
 function CONF_TABLES.rootSwepTable()
     root_swep = {
-        'weapon_crowbar',
+        'magnifying_glass',
     }
     return root_swep
 end
