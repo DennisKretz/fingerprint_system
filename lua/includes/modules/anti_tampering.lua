@@ -1,6 +1,6 @@
 module("ANTI_TAMPERING", package.seeall)
 
-local function getPlayerByName(ply)
+local function getPlayerPos(ply)
     for k,v in pairs(player.GetAll()) do
         if (v:GetName() == ply:GetName()) then
             return v:GetPos()
@@ -9,7 +9,7 @@ local function getPlayerByName(ply)
 end
 
 function ANTI_TAMPERING.checkPlayerPosition(ply)
-    plyPos = getPlayerByName(ply)
+    plyPos = getPlayerPos(ply)
     if (plyPos != ply:GetPos()) then
         return true
     end
