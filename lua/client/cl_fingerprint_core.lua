@@ -1,21 +1,18 @@
 if CLIENT then
-    ply = LocalPlayer()
-
-    net.Start("check_root_swep_table")
-    net.WriteEntity(ply)
-    net.SendToServer()
-
-    net.Start("check_weapons_table")
-    net.WriteEntity(LocalPlayer())
-    net.SendToServer()
-
-    local function getModel()
-        local model = ply:GetEyeTrace().Entity:GetModel()
-        ply:ChatPrint(model)
+    cCore = {}
+    function getFingerprint()
+        ply = LocalPlayer()
+    
+        net.Start("check_root_swep_table")
+        net.WriteEntity(ply)
+        net.SendToServer()
+    
+        net.Start("check_weapons_table")
+        net.WriteEntity(LocalPlayer())
+        net.SendToServer()
     end
-
-    hook.Add("OnPlayerChat", "get_weapon_model", getModel) -- this is a temp solution. later we need an swep
-
+    cCore['getFingerprint'] = getFingerprint
+    return cCore
 end
 
 
